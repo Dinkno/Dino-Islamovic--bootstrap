@@ -1,13 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap css koden laddas in först i mitt index.html -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Min egna css som laddas in efter bootstrap, vilket ger mig möjlighet att skriv kod över bootsrapen  -->
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js" >
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script> <!--Detta är Jquery CDN, vilket betyder utan att jag ladda ner själva Jquery kan jag använda det som ett javascript-->
 </head>
 <body>
-    <h1>yo whatddap, solo renekton nly top lane again.</h1>
+
+    <div id="mySidenav" class="sidenav"> <!--Detta är vart min css för navbaren kommer-->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!--Knappen stänger ner navbaren med onclick funktionen-->
+        <a href="#Element">Element</a> <!--Alla länkar har ett "#" vilket gör att jag skapar typ en länk och kan länka det till någon html kod som har ett id likadant.-->
+        <a href="#Html">Html</a>
+        <a href="#ID">ID</a>
+        <a href="#Class">Class</a>
+        <a href="#Meta">Meta</a>
+        <a href="#Responsive">Responsive</a>
+        <a href="#http">http</a>
+        <a href="#https">https</a>
+        <a href="#Compressed data">Compressed data</a>
+        <a href="#CDN">CDN</a>
+        <a href="#Local bootstrap">Local bootstrap</a>
+        <a href="#JQuery">JQuery</a>
+        <a href="#Flexbox">Flexbox</a>
+        <a href="#Grid">Grid</a>
+        <a href="#Code snippets">Code snippets</a>
+    </div>
+
+add mer text på allt.-->
+
+<div class="container-fluid row" style="background-color: antiquewhite;"> <!--Använder mig av en container och "row" som gör att texten fint radar neråt och en style som ändrar backgroundsfärgen.-->
+    <div class="d-flex justify-content-center"> <!--d-flex står för "display flex" som gör att flexbox funkar. Sedan så är justify-content-center som gör att all content centreras.-->
+        <span class="btn btn-primary" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span> 
+        <!--Classerna gör att knappen ser snyggare ut med en backgroundsfärg och ger den en annan färg när du hover över den. "Style" ändrar textstorleken och muspekaren. Sedan med onclick så kan rutan vid sidan öppnas när du clickar på knappen.-->
+
+        <!--Detta lägger till funktioner som gör navbaren antigen 250px bred eller 0px. Som är bara att den öppnas eller stängs-->
+        <!--Javascript från Jquery :) -->
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+        <h1 class="h1"><b>Bootstrap</b></h1>
+    </div>
+    <h2 class="h2">Vanliga begrepp inom html och css</h2>
+</div>
+<div class="container-fluid">
+<div class="row">
+    <div class="d-flex justify-content-center" style="background-color: aqua;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 "> <!--Bootstrap är uppbygt på 12 bitars kolumner och detta säger hur många kolumner som contentet ska ta beronde på hur bred sidan är.-->
+            <h1 id="Element">Element</h1> <!--id som blir länkat till navbaren-->
+            <p class="">Html element är själva din kod som är inuti två taggar, en start och en slut tag. Den definerar din sida och är vad som innerhåller din content och css.
+                Sedan så brukar de också ha en class som ändrar dens egenskap. I detta fall är <b>h1</b> innanför dessa symboler "< >" som bildar en tag.
+                "class="title"" är själva egenskapen och det som är mellan tagarna är contentet som i detta fall är text. Detta tillsammans bildar ett element.
+            </p>
+            <img class="img-fluid" src="content/Screenshot_2.png" alt="element"> <!--"img-fluid" är ändrad så att jag kan få bilderna passa bättre på alla olika skärmar-->
+        </div>
+        <!--(SAMMA SAK HELA VÄGEN NER)-->
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:khaki;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Html">Html</h1>
+            <p>Hypertext Markup Language eller Html förkortat. Är ett märkspråk för hypertext och är standarden 
+                med HTTP för WWW (World Wide Web).
+                Därför använder sig alla sidor någon typ av html kod för att ansluta sig till WWW.
+            </p>
+            <img  class="img-fluid" src="content/html-illustration.png" alt="html">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:darkgray ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="ID">ID</h1>
+            <p>Html id attributen specificerar ett id till ett element. Till exempel har du ett h1 (heading) element
+                som du vill ändra fontet men vill inte påverka alla h1 element. Så kan du ge en av dem ett specifkt id som 
+                kommer bara ändra h1 med just det id. Oftas kommer ändra du ditt id i din stylesheet om inte du ska länka delar på din sida.
+                Id attributen är inuti den första tagen.
+            </p>
+            <img class="img-fluid" src="content/Screenshot_3.png" alt="id">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:blueviolet ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Class">Class</h1>
+            <p>Classer är väldigt liknande id på att den ger en specifik egenskap till elementet.
+                Men en class kan man ge en grupp olika eller samma element en egenskap medans id är specifik bara till ett element.
+                Så den funkar på samma sätt att du kan ge den en egenskap som ändrar storleken eller fontet på en text.
+                classer kommer du alltid ändra i din stylesheet.
+            </p>
+            <img src="content/Screenshot_2.png" alt="class">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:crimson ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Meta">Meta</h1>
+            <p>Meta tagen definerar metadatan, som är informationen om datan. < meta> tagen ligger alltid inuti < head> tagen.
+                Till exempel beskriver meta vem som har skrivit sidan, beskrivningen av sidan och hur det ska se ut för andra när det kommer till sidan.
+                Läs mer om Meta på: <a href="https://www.w3schools.com/tags/tag_meta.asp">W3schools.com</a>
+            </p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:coral ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Responsive">Responsive</h1>
+            <p>En resposive sida är en sida som ändras så att den ser bra ut på alla enheter.
+                Till exempel så ändras storleken på bilderna och texten för mobilen så det ser bra ut.
+                Det finns flera sätt att göra en sida responsive men ett av dem är att använda sig av flexbox eller bootstrap.
+            </p>
+            <img class="img-fluid" src="content/img_temp_band.jpg" alt="resposive">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:darkorange ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="http">http</h1>
+            <p>När man surfar på webben så har varje sida någon http och WWW. WWW är när en webläsare körs på en online server,
+                vilket ger tillgång för att andra ska söka. Http står för Hyper Text Trasfer Protocol och används för att överföra data från sidor till användaren.
+                Så http kommunicerar med datorn via att skicka <b>http Request</b> och få <b>http Responses</b>
+            </p>
+            <img class="img-fluid" src="content/http-820x312.png" alt="http">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:hotpink ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="https">https</h1>
+            <p>Https är en säkrad variant av http och står för Hypertext Transfer Protocol Secure. Det beyder att när man 
+                loggar in eller använder annan information om sig själv som att skriva in sitt kortnummer. Så vet man att informationen 
+                inte kommer bli stulen av andra användare på sidan. Https funkar med att informationen krypteras som du skriver in och bara 
+                ägaren av sidan kan dekryptera informationen. Detta funkar med hjälp av ett protocol som heter SSL eller TLS.
+            </p>
+            <img class="img-fluid" src="content/protocol.jpg" alt="https"> 
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:lawngreen ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Compressed data">Compressed data</h1>
+            <p>Compressed data är när koden har blvit om kodad på ett sätt som göra att färre informationsbärande enheter behövs användas. 
+                Detta är väldigt bra för att spara utrymme i disken och filer. Det är också väldigt bra för att göra tt sidan inte tar för lång tid att ladda in alla data.
+            </p>
+            <img class="img-fluid" src="content/3401943c-c259-4bd7-86ab-f62e4ee06c99.png" alt="compressed data">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:lightskyblue ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="CDN">CDN</h1>
+            <p>CDN står för Content Delivery Network och är gjord för att få din sida att ladda in mycket snabbare. 
+                Med hjälp av att fördela nätverks servers runt om planeten med HTML, javascript och filer.
+                Får du någon som bort långt bort att snabbt få in informationen av websidan och därmed laddar deras sidan in mycket snabbare.
+                Förutom detta kan CDN också skydda mot attacker som DDOS. Denna sida använder sig av JQuery som finns i form av CDN.
+            </p>
+            <img class="img-fluid" src="content/Screenshot_4.png" alt="CDN">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:tomato ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Local bootstrap">Local bootstrap</h1>
+            <p>Local bootstrap är när du har laddat ner bootstrap i ditt kodningsprogram. Detta ger dig tillgång att ta bort koden
+                och göra förändringa. jämnförelse med CDN som är över internet och är inte nerladdat på datorn.
+            </p>
+            <img src="content/bootstrap-local-vs-cdn.png" alt="local bootstrap">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:indianred ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="JQuery">JQuery</h1>
+            <p>JQuery är de mest populära javascript bibloteken. JQuery är gjort för att förenkla och gör det mycket tydligare när man byger sidor med javascript.
+                Den gör flera långa linjor med kod till bara en kort och enkelt javascripts kod. Funkar på många liknande sätt som bootstrap men bara för javascript.
+                Läs mer på: <a href="https://www.w3schools.com/jquery/jquery_intro.asp">W3schools.com</a>
+            </p>
+            <img class="img-fluid" src="content/what-is-jquery-1.png" alt="JQuery">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:violet ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Flexbox">Flexbox</h1>
+            <p>Flexbox är en layout model inom HTML som ger dig tillgång att näst intill fritt röra runt lådor med saker på sidan.
+                Detta ger en sida en bra struktur och gör den mycket snyggare. Då innan man var tvungen att göra flera rader av kod för att få en bild till mitten av sidan.
+            </p>
+            <img class="img-fluid" src="content/rYjT7.png" alt="Flexbox">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:tan ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Grid">Grid</h1>
+            <p>Grid är också en typ av layout model som hjälper dig designa din sida i ett slags rutnät.
+                Det är en väldigt enkel layout som man använder för att slippa element som floats och positioning.
+            </p>
+            <img class="img-fluid" src="content/css-grid-with-gaps.jpg" alt="Grid">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="background-color:darkseagreen ;">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 ">
+            <h1 id="Code snippets">Code snippets</h1>
+            <p>Code snippets är en term för en specifik bit av kod som är återanvändbar. Gör det mycket enklare än att skriva om koden flera gånger om. </p>
+            <img class="img-fluid" src="content/i1sxwhy2qap4amz4hxpo.png" alt="Code snippet">
+        </div>
+    </div>
+</div>
 </body>
 </html>
